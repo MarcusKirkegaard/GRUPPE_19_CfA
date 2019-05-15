@@ -1,0 +1,209 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Setting variable colors. Shows up as an error, but its fine according to Hemi */
+:root {
+	--link: dimgrey;
+	--link_hover: black;
+	--nav: #e4e4e4;
+	--nav_text: dimgrey;
+	--nav_text_hover: black;
+	--joboguddannelser: #3e76ec;
+    --netvaerk: #179a13;
+	--raadgivning: #ff0000;
+	--forskning: #ffce01;
+	--footer: dimgrey;
+	--footer_text: #e4e4e4;
+}
+
+body {
+	font-size: 1.2em;
+	min-width: 550px;
+}
+
+/* wrapper */
+.wrapper {
+	width: 100%;
+	margin: auto;	
+	align-items: center;
+	background-color: white;
+	padding: 0em;
+}
+
+a {
+	text-decoration: none;
+	color: var(--link);
+}
+a:hover {
+	color: var(--link_hover);
+}
+img {
+	max-width: 100%;
+}
+
+nav {
+	display: flex;
+	justify-content: flex-start;
+	background-color: var(--nav);
+	color: var(--nav_text);
+}
+
+nav div {
+	flex: 2;
+}
+#navbutton_omos, #navbutton_kontakt, #navbutton_soeg {
+	background-color: white;
+	border-color: var(--nav);
+	border-width: 1px;
+	border-style: solid;
+	width: 3em;
+	text-align: center;
+}
+
+#navbutton_logo, #navbutton_omos, #navbutton_kontakt, #navbutton_soeg {
+	color: var(--nav_text);
+	padding: 1em;
+}
+#navbutton_logo:hover, #navbutton_omos:hover, #navbutton_kontakt:hover, #navbutton_soeg:hover {
+	color: var(--nav_text_hover);
+}
+/*boxes container*/
+.boxes {
+	display: grid;
+	grid-template-columns: auto auto;
+	padding: 1em;
+	align-items: center;
+	margin-top: 1em;
+	grid-column-gap: 1em;
+}
+
+/* boxes */
+.box {
+	min-width: 100px;
+	font-size: 0.8em;
+	justify-self: center;
+}
+.box:hover {
+	opacity: 0.5;
+}
+/* titles on boxes*/
+.title_joboguddannelser, .title_netvaerk, .title_raadgivning, .title_forskning {
+    margin-top: -0.2em;
+	padding: 1em;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	min-height: 5em;
+}
+/* colors on box titles */
+.title_joboguddannelser {
+	background: var(--joboguddannelser);
+}
+.title_netvaerk {
+	background: var(--netvaerk);
+}
+.title_raadgivning {
+	background: var(--raadgivning);
+}
+.title_forskning {
+	background: var(--forskning);
+}
+
+.mest_soegte {
+	background-color: var(--nav);
+	padding: 1em;
+}
+.mest_soegte_container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding-bottom: 1em;
+}
+.mest_soegte_container a {
+	background-color: white;
+	padding: 1em;
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--nav);
+	border-radius: 10px;
+}
+
+.alle_emner {
+	background-color: var(--nav);
+	padding: 1em;
+	margin-top: 1em;
+}
+
+.alle_emner_container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin-top: -1em;
+}
+.alle_emner_container ul {
+	list-style-type: square;
+}
+
+.alle_emner_box {
+	background-color: white;
+	border-style: solid;
+	border-color: var(--nav);
+	border-radius: 10px;
+	padding: 1em;
+	min-width: 10em;
+	justify-self: stretch;
+}
+
+.alle_emner_box li {
+	margin-left: 1em;
+}
+
+.footer {
+	background-color: var(--footer);
+	padding: 1em;
+	margin-top: 1em;
+	color: var(--footer_text);
+	display: flex;
+	justify-content: space-around;
+}
+
+.footer ul {
+	list-style-type: none;
+}
+
+.footer_some {
+	height: auto;
+	margin-top: 3em;
+	
+}
+
+
+@media (min-width: 900px) {
+	.alle_emner_container {
+	grid-template-columns: 1fr 1fr 1fr;
+}
+}
+
+@media (min-width: 1130px) {
+	
+	.boxes {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+	
+	.wrapper {
+	width: 90%;
+	}
+	
+	.alle_emner_container {
+		grid-template-columns: auto auto auto auto;
+	}
+}
+
+@media (min-width: 1300px) {
+	.wrapper {
+		width: 80%;
+	}
+
+
+
+
+
