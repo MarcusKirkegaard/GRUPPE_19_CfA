@@ -3,22 +3,23 @@
 
 /* Setting variable colors. Shows up as an error, but its fine according to Hemi */
 :root {
+	--body: white;
 	--link: dimgrey;
 	--link_hover: black;
 	--nav: #e4e4e4;
 	--nav_text: dimgrey;
 	--nav_text_hover: black;
-	--joboguddannelser: #3e76ec;
-    --netvaerk: #179a13;
-	--raadgivning: #ff0000;
-	--forskning: #ffce01;
-	--footer: dimgrey;
-	--footer_text: #e4e4e4;
+	--ydelser: #179a13;
+    --paaroerende: #ff0000;
+	--professionelle: #3e76ec;
+	--om_os: #ffce01;
+	--footer: lightgrey;
+	--footer_text: black;
 }
 
 body {
 	font-size: 1.2em;
-	min-width: 550px;
+	font-family: arial;
 }
 
 /* wrapper */
@@ -41,40 +42,37 @@ img {
 	max-width: 100%;
 }
 
-nav {
+nav, #navbutton_logo {
 	display: flex;
-	justify-content: flex-start;
-	background-color: var(--nav);
-	color: var(--nav_text);
+	justify-content: center;
+	background-color: var(--body);
 }
 
-nav div {
-	flex: 2;
-}
-#navbutton_omos, #navbutton_kontakt, #navbutton_soeg {
-	background-color: white;
-	border-color: var(--nav);
-	border-width: 1px;
-	border-style: solid;
-	width: 3em;
-	text-align: center;
+#navbutton_logo img {
+	width: 219px;
+	height: 112px;
 }
 
-#navbutton_logo, #navbutton_omos, #navbutton_kontakt, #navbutton_soeg {
+#navbutton_nyheder, #navbutton_kontakt, #navbutton_soeg {
+	width: 4em;
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+#navbutton_logo, #navbutton_nyheder, #navbutton_kontakt, #navbutton_soeg {
 	color: var(--nav_text);
 	padding: 1em;
 }
-#navbutton_logo:hover, #navbutton_omos:hover, #navbutton_kontakt:hover, #navbutton_soeg:hover {
-	color: var(--nav_text_hover);
+#navbutton_nyheder:hover, #navbutton_kontakt:hover, #navbutton_soeg:hover {
+	opacity: 0.5;
 }
 /*boxes container*/
 .boxes {
 	display: grid;
-	grid-template-columns: auto auto;
-	padding: 1em;
+	grid-template-columns: auto;
 	align-items: center;
-	margin-top: 1em;
 	grid-column-gap: 1em;
+	margin-bottom: 1em;
 }
 
 /* boxes */
@@ -86,27 +84,31 @@ nav div {
 .box:hover {
 	opacity: 0.5;
 }
+
+.box img {
+	display: none;
+}
 /* titles on boxes*/
-.title_joboguddannelser, .title_netvaerk, .title_raadgivning, .title_forskning {
+.title_ydelser, .title_paaroerende, .title_professionelle, .title_om_os {
     margin-top: -0.2em;
 	padding: 1em;
 	color: white;
 	text-align: center;
-	text-transform: uppercase;
-	min-height: 5em;
+	min-height: 3em;
+		width: 400px;
 }
 /* colors on box titles */
-.title_joboguddannelser {
-	background: var(--joboguddannelser);
+.title_ydelser {
+	background: var(--ydelser);
 }
-.title_netvaerk {
-	background: var(--netvaerk);
+.title_paaroerende {
+	background: var(--paaroerende);
 }
-.title_raadgivning {
-	background: var(--raadgivning);
+.title_professionelle {
+	background: var(--professionelle);
 }
-.title_forskning {
-	background: var(--forskning);
+.title_om_os {
+	background: var(--om_os);
 }
 
 .mest_soegte {
@@ -159,28 +161,51 @@ nav div {
 
 .footer {
 	background-color: var(--footer);
-	padding: 1em;
-	margin-top: 1em;
 	color: var(--footer_text);
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: -1em;
 }
 
-.footer ul {
+.footer div {
 	list-style-type: none;
+	margin: auto;
+	text-align: center;
 }
 
 .footer_some {
 	height: auto;
 	margin-top: 3em;
-	
+	margin: auto;
+	display: flex;
 }
 
+.footer_some a img{
+	max-width: 4em;
+	padding: 0.5em;
+}
+.footer_some a img:hover {
+	opacity: 0.5;
+}
 
-@media (min-width: 900px) {
+@media (min-width: 600px) {
 	.alle_emner_container {
 	grid-template-columns: 1fr 1fr 1fr;
-}
+	}
+	.boxes {
+    grid-template-columns: 1fr 1fr;
+    }
+	.box img {
+	display: block;
+	}
+	.footer {
+	flex-direction: row;
+	}
+	
+	/* titles on boxes*/
+.title_ydelser, .title_paaroerende, .title_professionelle, .title_om_os {
+	width: auto;
 }
 
 @media (min-width: 1130px) {
@@ -202,6 +227,7 @@ nav div {
 	.wrapper {
 		width: 80%;
 	}
+}
 
 
 
