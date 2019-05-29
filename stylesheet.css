@@ -1,25 +1,33 @@
 @charset "utf-8";
 /* CSS Document */
 
-/* Setting variable colors. Shows up as an error, but its fine according to Hemi */
+/* Color */
 :root {
 	--body: white;
 	--link: dimgrey;
-	--link_hover: black;
-	--nav: #e4e4e4;
+	--link_hover: #F1E35F;
+	--nav: #f0f0f0;
 	--nav_text: dimgrey;
 	--nav_text_hover: black;
-	--ydelser: #179a13;
-    --paaroerende: #ff0000;
-	--professionelle: #3e76ec;
-	--om_os: #ffce01;
-	--footer: lightgrey;
+	--emne1: #66b230;
+    --emne2: #547dbd;
+	--emne3: #e32626;
+	--emne4: #f5994a;
+	--footer: #9c9c9c;
 	--footer_text: black;
+	--boxes_title: #F1E35F;
+	--button: #F1E35F;
+	--button_hover: white;
+	--main: white;
+	--main_nav: ;
+	--alle_emner: #f0f0f0;
+	--wrapper: #f0f0f0;
 }
 
 body {
-	font-size: 1.2em;
+	font-size: 1em;
 	font-family: arial;
+	background-color: var(--body);
 }
 
 /* wrapper */
@@ -27,7 +35,6 @@ body {
 	width: 100%;
 	margin: auto;	
 	align-items: center;
-	background-color: white;
 	padding: 0em;
 }
 
@@ -38,77 +45,142 @@ a {
 a:hover {
 	color: var(--link_hover);
 }
+
+.button {
+	background-color: var(--button);
+	padding: 1em;
+	color: black;
+	border-radius: 20px;
+}
+
+.button:hover {
+	background-color: var(--button_hover);
+}
+
 img {
 	max-width: 100%;
 }
 
-nav, #navbutton_logo {
+nav {
+	padding-left: 2em;
+	padding-right: 2em;
+	background-color: white;
+}
+#nav_desktop {
+	display: none;
+}
+#nav_mobile {
+	display: flex;
+	background-color: var(--body);
+	justify-content: center;
+}
+
+#logo_mobile img, #logo_desktop img{
+	width: 164px;
+	height: 84px;
+}
+
+#logo_mobile {
 	display: flex;
 	justify-content: center;
-	background-color: var(--body);
 }
 
-#navbutton_logo img {
-	width: 219px;
-	height: 112px;
-}
-
-#navbutton_nyheder, #navbutton_kontakt, #navbutton_soeg {
-	width: 4em;
-	margin-left: 2em;
-	margin-right: 2em;
-}
-
-#navbutton_logo, #navbutton_nyheder, #navbutton_kontakt, #navbutton_soeg {
-	color: var(--nav_text);
+.navbutton_nyheder, .navbutton_kontakt, .navbutton_soeg {
+	max-width: 4em;
+	min-width: 3em;
 	padding: 1em;
 }
-#navbutton_nyheder:hover, #navbutton_kontakt:hover, #navbutton_soeg:hover {
+
+.navbutton_nyheder:hover, .navbutton_kontakt:hover, .navbutton_soeg:hover {
 	opacity: 0.5;
+}
+
+.cover1 {
+	background-image: url(img/cover.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 50vh;
+	background-position: top left;
+}
+
+.cover2 {
+	background-image: url(img/farveblyanter.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 50vh;
+	background-position: center left;
+	margin-top: 1em;
+}
+
+.cover1 article {
+	margin-left: 50%;
+	padding-top: 2em;
+	padding-right: 0.5em;
+}
+
+.cover2 article {
+	margin-left: 50%;
+	padding-top: 2em;
+	padding-right: 0.5em;
 }
 /*boxes container*/
 .boxes {
 	display: grid;
 	grid-template-columns: auto;
-	align-items: center;
-	grid-column-gap: 1em;
-	margin-bottom: 1em;
+	margin-top: 2.5em;
 }
 
-/* boxes */
-.box {
-	min-width: 100px;
-	font-size: 0.8em;
-	justify-self: center;
-}
-.box:hover {
-	opacity: 0.5;
-}
+
+.box:hover .title_emne1 {
+		background: var(--emne1);
+	}
+.box:hover .title_emne2 {
+		background: var(--emne2);
+	}
+.box:hover .title_emne3 {
+		background: var(--emne3);
+	}
+.box:hover .title_emne4 {
+		background: var(--emne4);
+	}
 
 .box img {
 	display: none;
 }
+
 /* titles on boxes*/
-.title_ydelser, .title_paaroerende, .title_professionelle, .title_om_os {
-    margin-top: -0.2em;
+.title_emne1, .title_emne2, .title_emne3, .title_emne4 {
 	padding: 1em;
-	color: white;
 	text-align: center;
-	min-height: 3em;
-		width: 400px;
+	color: black;
+	background-color: var(--boxes_title);
+	width: auto;
+	margin-top: -1.5em;
 }
 /* colors on box titles */
-.title_ydelser {
-	background: var(--ydelser);
+.title_emne1:hover, #emne1_active{
+	background: var(--emne1);
 }
-.title_paaroerende {
-	background: var(--paaroerende);
+
+.title_emne2:hover, #emne2_active{
+	background: var(--emne2);
 }
-.title_professionelle {
-	background: var(--professionelle);
+
+.title_emne3:hover, #emne3_active{
+	background: var(--emne3);
 }
-.title_om_os {
-	background: var(--om_os);
+
+.title_emne4:hover, #emne4_active{
+	background: var(--emne4);
+}
+
+.broedkrumme a {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.broedkrumme {
+	padding: 1em;
+	margin-top: -1em;
 }
 
 .mest_soegte {
@@ -127,29 +199,56 @@ nav, #navbutton_logo {
 	border-width: 1px;
 	border-style: solid;
 	border-color: var(--nav);
-	border-radius: 10px;
+	border-radius: 20px;
 }
 
+.main {
+	display: block;
+			border-style: solid;
+	border-width: 1em;
+	border-color: #f0f0f0;
+
+}
+
+.main_nav {
+	background-color: var(--main_nav);
+	padding: 2em;
+	color: var(--emne1);
+	
+}
+
+.main_nav ul{
+	list-style-type: square;
+	color: var(--emne1);
+}
+
+.main_article {
+	padding: 2em;
+	background-color: var(--main);
+}
 .alle_emner {
-	background-color: var(--nav);
+	background-color: var(--alle_emner);
 	padding: 1em;
 	margin-top: 1em;
 }
 
 .alle_emner_container {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	margin-top: -1em;
+	grid-template-columns: 1fr;
+
+	grid-gap: -4em;
 }
+
 .alle_emner_container ul {
 	list-style-type: square;
+	color: var(--boxes_title);
 }
 
 .alle_emner_box {
 	background-color: white;
 	border-style: solid;
-	border-color: var(--nav);
-	border-radius: 10px;
+	border-color: var(--alle_emner);
+	border-radius: 20px;
 	padding: 1em;
 	min-width: 10em;
 	justify-self: stretch;
@@ -159,39 +258,39 @@ nav, #navbutton_logo {
 	margin-left: 1em;
 }
 
-.footer {
+footer {
 	background-color: var(--footer);
 	color: var(--footer_text);
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
-	margin-top: -1em;
+	margin-top: 1em;
+	padding: 1em;
 }
 
-.footer div {
+footer article {
 	list-style-type: none;
 	margin: auto;
 	text-align: center;
 }
 
-.footer_some {
+footer aside {
 	height: auto;
 	margin-top: 3em;
 	margin: auto;
 	display: flex;
 }
 
-.footer_some a img{
+footer aside a img{
 	max-width: 4em;
 	padding: 0.5em;
 }
-.footer_some a img:hover {
+footer aside a img:hover {
 	opacity: 0.5;
 }
 
 @media (min-width: 600px) {
 	.alle_emner_container {
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	}
 	.boxes {
     grid-template-columns: 1fr 1fr;
@@ -199,34 +298,79 @@ nav, #navbutton_logo {
 	.box img {
 	display: block;
 	}
-	.footer {
+	.box {
+		width: 100%;
+	}
+	footer {
 	flex-direction: row;
 	}
 	
+	
 	/* titles on boxes*/
-.title_ydelser, .title_paaroerende, .title_professionelle, .title_om_os {
+.title_emne1, .title_emne2, .title_emne3, .title_emne4 {
 	width: auto;
 }
-
-@media (min-width: 1130px) {
 	
+	
+
+@media (min-width: 1024px) {
+	/* nav */
+	#nav_mobile {
+		display: none;
+	}
+	#nav_desktop {
+		display: flex;
+		justify-content: flex-end;
+	}
+	#logo_mobile {
+		display: none;
+	}
+	#logo_desktop {
+		flex: 5;
+	}
 	.boxes {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+		margin-top: 1em;
     }
+	.title_emne1, .title_emne2, .title_emne3, .title_emne4 {
+    margin-top: 0em;
+	}
 	
 	.wrapper {
 	width: 90%;
 	}
 	
 	.alle_emner_container {
-		grid-template-columns: auto auto auto auto;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
+	
+	.main {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-column-gap: 1em;
+}
+
+.main_nav {
+	grid-column-start: 0;
+	grid-column-end: 1;
+	padding: 2em;
+}
+.main_article {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	padding: 2em;
+}
 }
 
 @media (min-width: 1300px) {
 	.wrapper {
 		width: 80%;
 	}
+	
+	.alle_emner_container {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
 }
 
 
